@@ -4,16 +4,15 @@ import android.content.Context
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.kalpanadhurpate_nycschools.pojo.SchoolListPojo
-import com.example.kalpanadhurpate_nycschools.pojo.SchoolListPojoItem
-import com.example.kalpanadhurpate_nycschools.retrofit.ApiInterface
+import com.example.kalpanadhurpate_nycschools.model.SchoolList
+import com.example.kalpanadhurpate_nycschools.api.ApiInterface
 
 class SchoolRepository(
     private val apiInterface: ApiInterface,
     private val applicationContext: Context,
 ) {
-    private val schoolLiveData = MutableLiveData<SchoolListPojo>()
-    val schoolList: LiveData<SchoolListPojo>
+    private val schoolLiveData = MutableLiveData<SchoolList>()
+    val schoolList: LiveData<SchoolList>
     get() = schoolLiveData
 
     suspend fun getSchoolList() {

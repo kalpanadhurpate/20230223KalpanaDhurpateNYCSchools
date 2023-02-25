@@ -1,6 +1,6 @@
-package com.example.kalpanadhurpate_nycschools.pojo
+package com.example.kalpanadhurpate_nycschools.model
 
-data class SchoolListPojoItem(
+data class SchoolListItem(
     val dbn: String,
     val num_of_sat_test_takers: String,
     val sat_critical_reading_avg_score: String,

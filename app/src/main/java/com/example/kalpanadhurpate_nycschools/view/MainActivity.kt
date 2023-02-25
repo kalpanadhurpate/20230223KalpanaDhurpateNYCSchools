@@ -10,13 +10,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.kalpanadhurpate_nycschools.R
 import com.example.kalpanadhurpate_nycschools.SchoolApplication
 import com.example.kalpanadhurpate_nycschools.adapter.RecyclerViewAdapter
-import com.example.kalpanadhurpate_nycschools.data.CollegeNames
-import com.example.kalpanadhurpate_nycschools.pojo.SchoolListPojoItem
+import com.example.kalpanadhurpate_nycschools.model.SchoolListItem
 import com.example.kalpanadhurpate_nycschools.viewmodel.SchoolListViewModelFactory
 import com.example.kalpanadhurpate_nycschools.viewmodel.SchoolViewModel
 
 class MainActivity : AppCompatActivity() {
-    private var schoolList = listOf<SchoolListPojoItem>()
+    private var schoolList = listOf<SchoolListItem>()
     private lateinit var schoolViewModel: SchoolViewModel
     private lateinit var adapter: RecyclerViewAdapter
 

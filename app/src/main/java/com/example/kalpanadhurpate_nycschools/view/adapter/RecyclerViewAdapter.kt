@@ -6,14 +6,14 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kalpanadhurpate_nycschools.R
-import com.example.kalpanadhurpate_nycschools.pojo.SchoolListPojoItem
+import com.example.kalpanadhurpate_nycschools.model.SchoolListItem
 
 class RecyclerViewAdapter() :
     RecyclerView.Adapter<MyViewHolder>() {
-    private var schoolList = mutableListOf<SchoolListPojoItem>()
-    var onItemClick: ((SchoolListPojoItem) -> Unit)? = null
+    private var schoolList = mutableListOf<SchoolListItem>()
+    var onItemClick: ((SchoolListItem) -> Unit)? = null
 
-    public fun updateMovieList(list: List<SchoolListPojoItem>) {
+    public fun updateMovieList(list: List<SchoolListItem>) {
         this.schoolList = list.toMutableList()
         notifyDataSetChanged()
     }
@@ -39,7 +39,7 @@ class RecyclerViewAdapter() :
 }
 
 class MyViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
-    fun bind(fruit: SchoolListPojoItem) {
+    fun bind(fruit: SchoolListItem) {
         val nameTextView = view.findViewById<TextView>(R.id.textViewCollegeName)
         nameTextView.text = fruit.school_name
     }

@@ -1,4 +1,4 @@
-package com.example.kalpanadhurpate_nycschools.retrofit
+package com.example.kalpanadhurpate_nycschools.api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
