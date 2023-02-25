@@ -14,7 +14,7 @@ class SchoolApplication : Application() {
 
     private fun initialize() {
         val apiInterface = RetrofitClient.getInstance().create(ApiInterface::class.java)
-        schoolRepository = SchoolRepository(apiInterface, applicationContext)
+        schoolRepository = SchoolRepository(apiInterface)
 
     }
 

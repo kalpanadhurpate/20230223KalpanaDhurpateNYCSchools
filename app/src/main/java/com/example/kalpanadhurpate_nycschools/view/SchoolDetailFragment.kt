@@ -71,9 +71,6 @@ class SchoolDetailFragment : DialogFragment() {
         textViewReading.text = arguments?.getString(KEY_READING)
         textViewWriting.text = arguments?.getString(KEY_WRITING)
 
-
-        //view.t = arguments?.getString(KEY_MATH)
-        ///   view.tvSubTitle.text = arguments?.getString(KEY_SUBTITLE)
     }
 
     private fun setupClickListeners(view: View) {

@@ -14,7 +14,6 @@ import com.example.kalpanadhurpate_nycschools.viewmodel.SchoolListViewModelFacto
 import com.example.kalpanadhurpate_nycschools.viewmodel.SchoolViewModel
 
 class MainActivity : AppCompatActivity() {
-    private var schoolList = listOf<SchoolListItem>()
     private lateinit var schoolViewModel: SchoolViewModel
     private lateinit var adapter: RecyclerViewAdapter
 
@@ -22,9 +21,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         val recyclerView = findViewById<RecyclerView>(R.id.CollegeNamesRecyclerView)
         recyclerView.setHasFixedSize(true)
         val repository = (application as SchoolApplication).schoolRepository
+        //viewmodel instance
         schoolViewModel = ViewModelProvider(
             this,
             SchoolListViewModelFactory(repository)
@@ -34,12 +35,18 @@ class MainActivity : AppCompatActivity() {
         adapter = RecyclerViewAdapter()
         recyclerView.adapter = adapter
 
+        //activity observe school list data
         schoolViewModel.schools.observe(this) {
-            Log.i("got service response: ", it.toString())
             adapter.updateMovieList(it)
         }
+       //show school details
         adapter.onItemClick = {
-            SchoolDetailFragment.newInstance(it.school_name,"Math Score: "+it.sat_math_avg_score,"Reading Score: "+ it.sat_critical_reading_avg_score,"Writing Score: "+it.sat_writing_avg_score)
+            SchoolDetailFragment.newInstance(
+                it.school_name,
+                "Math Score: " + it.sat_math_avg_score,
+                "Reading Score: " + it.sat_critical_reading_avg_score,
+                "Writing Score: " + it.sat_writing_avg_score
+            )
                 .show(supportFragmentManager, SchoolDetailFragment.TAG)
         }
     }

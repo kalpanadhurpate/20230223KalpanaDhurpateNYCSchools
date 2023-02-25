@@ -6,6 +6,7 @@ import retrofit2.http.GET
 
 
 interface ApiInterface {
+    //service call to get data
     @GET("resource/f9bf-2cp4.json")
     suspend fun getSchoolList():Response<SchoolList>
 }
