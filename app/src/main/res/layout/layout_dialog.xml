@@ -4,28 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp">
+    <TextView
+        android:id="@+id/textViewSchoolName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="4dp"
+        android:text="School name"
+        android:textSize="22sp" />
+    <TextView
+        android:id="@+id/textViewDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="4dp"
+        android:text="SAT Score Details"
+        android:textSize="22sp" />
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="16sp"
-        android:layout_marginTop="4dp"/>
+        android:layout_gravity="center"
+        android:layout_marginTop="4dp"
+        android:text="Math"
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="16sp"
-        android:layout_marginTop="14dp"/>
+        android:layout_gravity="center"
+        android:layout_marginTop="14dp"
+        android:text="Reading"
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:layout_marginTop="14dp"/>
+        android:layout_gravity="center"
+        android:layout_marginTop="14dp"
+        android:text="Writing" />
+
+    <Button
+        android:id="@+id/btnOk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="6dp"
+        android:text="OK"
+        android:textStyle="bold" />
 </LinearLayout>

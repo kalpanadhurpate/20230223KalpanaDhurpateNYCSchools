@@ -3,7 +3,6 @@ package com.example.kalpanadhurpate_nycschools.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -40,9 +39,9 @@ class MainActivity : AppCompatActivity() {
             adapter.updateMovieList(it)
         }
         adapter.onItemClick = {
-            Toast.makeText(this, it.toString(), Toast.LENGTH_SHORT).show()
-            SATScore().show(supportFragmentManager, "MyCustomFragment")
+            SchoolDetailFragment.newInstance(it.school_name,"Math Score: "+it.sat_math_avg_score,"Reading Score: "+ it.sat_critical_reading_avg_score,"Writing Score: "+it.sat_writing_avg_score)
+                .show(supportFragmentManager, SchoolDetailFragment.TAG)
         }
-
     }
+
 }
